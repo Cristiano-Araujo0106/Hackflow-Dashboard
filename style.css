@@ -1,0 +1,130 @@
+*{box-sizing:border-box}
+:root{--roxo:#7061df;--roxo-claro:#f0edff;--texto:#27283d;--cinza:#8d90a3;--borda:#e9eaf1;--fundo:#f7f8fb;--verde:#28b985}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fundo);color:var(--texto);font-family:Inter,Arial,sans-serif;font-size:13px}
+button,input{font:inherit}
+button{cursor:pointer}
+.esconder{display:none!important}
+
+/* LOGIN */
+.tela-login{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;background:linear-gradient(135deg,#f7f6ff,#f7f8fb)}
+.login-card{width:min(410px,100%);background:white;border:1px solid var(--borda);border-radius:16px;padding:32px;box-shadow:0 15px 50px #27283d10}
+.logo{width:45px;height:45px;border-radius:12px;background:var(--roxo);color:white;display:grid;place-items:center;font:bold 24px Poppins;margin-bottom:20px}
+.pequeno{font-size:9px;letter-spacing:1.4px;color:#a0a2b1;font-weight:700;margin:0 0 8px}
+.roxo{color:var(--roxo)}
+.login-card h1{font:700 25px Poppins;margin:0 0 8px}
+.texto-login{color:#9295a6;font-size:12px;line-height:1.6;margin:0 0 25px}
+.login-card label{display:block;font-size:11px;font-weight:600;margin:13px 0 7px}
+.login-card input{width:100%;height:43px;border:1px solid #dddfea;border-radius:8px;padding:0 12px;outline:none}
+.login-card input:focus{border-color:var(--roxo);box-shadow:0 0 0 3px #7061df12}
+.botao-principal{width:100%;height:43px;border:0;border-radius:8px;background:var(--roxo);color:white;font-weight:600;margin-top:20px}
+.mensagem-login{height:16px;color:#d65d67;font-size:10px;margin:8px 0 0}
+.acesso-teste{margin-top:20px;padding:12px;border-radius:8px;background:#f7f6ff;color:#77798c;font-size:10px;display:flex;flex-direction:column;gap:4px}
+.acesso-teste strong{color:#6054bd}
+
+/* MENU */
+.barra-lateral{position:fixed;left:0;top:0;bottom:0;width:230px;background:#fff;border-right:1px solid var(--borda);padding:27px 16px;display:flex;flex-direction:column;z-index:5}
+.marca{text-decoration:none;color:#292a3e;font:bold 20px Poppins;display:flex;align-items:center;gap:9px;margin:0 7px 45px}
+.marca span{width:31px;height:31px;background:var(--roxo);color:#fff;border-radius:9px;display:grid;place-items:center;font-size:16px}
+.titulo-menu{font-size:9px;letter-spacing:1.4px;color:#a3a5b3;margin:0 11px 12px;font-weight:700}
+.menu-link{height:42px;margin:2px 0;border-radius:8px;display:flex;align-items:center;gap:12px;padding:0 12px;color:#7f8295;text-decoration:none;font-size:12px;font-weight:600}
+.menu-link.ativo{background:var(--roxo-claro);color:var(--roxo)}
+.menu-link b{margin-left:auto;background:#e3dffe;color:#7665dd;padding:3px 6px;border-radius:4px;font-size:9px}
+.caixa-ajuda{margin-top:auto;background:#f6f4ff;border:1px solid #ece9ff;border-radius:10px;padding:14px}
+.caixa-ajuda strong{font-size:10px}
+.caixa-ajuda p{font-size:9px;line-height:1.6;color:#9294a5;margin:7px 0 10px}
+.barra-pequena{height:5px;background:#e4e1f5;border-radius:10px;overflow:hidden}
+.barra-pequena span{display:block;width:50%;height:100%;background:var(--roxo)}
+.usuario-menu{border-top:1px solid var(--borda);margin-top:20px;padding-top:15px;display:flex;align-items:center;gap:8px}
+.usuario-menu strong,.usuario-menu small{display:block;font-size:10px}
+.usuario-menu small{font-size:9px;color:#a1a3b1;margin-top:3px}
+.avatar{width:33px;height:33px;border-radius:50%;display:grid;place-items:center;font-size:9px;font-weight:700;flex-shrink:0}
+.avatar-roxo{background:#e2ddff;color:#6755cf}.avatar-laranja{background:#ffe4d6;color:#c66e46}.avatar-azul{background:#dcefff;color:#3985b8}.avatar-verde{background:#dff7eb;color:#349c75}
+
+/* CONTEÚDO */
+.conteudo{margin-left:230px;padding:0 36px;max-width:1600px}
+.cabecalho{height:70px;border-bottom:1px solid var(--borda);display:flex;justify-content:space-between;align-items:center}
+.caminho{font-size:10px;color:#a1a4b3}.caminho strong{color:#64677b}.acoes{display:flex;align-items:center;gap:14px}
+.status-online{font-size:10px;color:#777b8e}.status-online i,.situacao i,footer i{width:6px;height:6px;background:var(--verde);border-radius:50%;display:inline-block;margin-right:5px}
+.botao-sair{background:white;border:1px solid var(--borda);border-radius:7px;padding:7px 11px;color:#777b8e;font-size:10px}
+.cabecalho-pagina{padding:29px 0 22px;display:flex;align-items:end;justify-content:space-between}
+.cabecalho-pagina h2{font:700 27px Poppins;margin:0 0 5px;letter-spacing:-.7px}
+.cabecalho-pagina>div>p:last-child{color:#9699a9;font-size:11px;margin:0}
+.situacao{font-size:10px;background:#edfbf5;color:#2aa77c;padding:8px 10px;border-radius:7px}
+
+/* RESUMO */
+.resumo{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cartao-resumo,.cartao{background:white;border:1px solid var(--borda);border-radius:11px;box-shadow:0 3px 14px #22223a04}
+.cartao-resumo{padding:16px}
+.titulo-cartao{font-size:10px;color:#858899;display:flex;justify-content:space-between}
+.cartao-resumo>strong{font:700 25px Poppins;display:block;margin:12px 0 11px;letter-spacing:-1px}
+.cartao-resumo>strong small{font:500 11px Inter;color:#999cab}
+.barra{height:5px;background:#e9e8f5;border-radius:10px;overflow:hidden}
+.barra span{display:block;width:0;height:100%;background:var(--roxo);transition:width .3s}
+.barra.amarela{background:#fff0d0}.barra.amarela span{background:#eab640}
+.rodape-cartao{display:flex;justify-content:space-between;gap:5px;margin-top:9px;font-size:8px;color:#9699aa}
+.pontos-tarefas{display:flex;gap:4px;height:5px;margin-bottom:10px}
+.pontos-tarefas span{flex:1;background:#e6f5ef;border-radius:5px}.pontos-tarefas .feito{background:#36b98c}
+.mini-equipe{display:flex;margin:0 0 10px}
+.pequeno-avatar{width:24px;height:24px;margin-right:-5px;font-size:7px;border:2px solid white}
+
+/* PAINÉIS */
+.grade{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,1fr);gap:16px;margin-top:18px}
+.cartao{padding:20px}
+.topo-cartao{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.topo-cartao h3{font:700 16px Poppins;margin:0}
+.topo-cartao>div>p:last-child,.subtitulo{font-size:10px;color:#9a9dad;margin:5px 0 0}
+.numero{font:600 9px Inter;background:#f0edff;color:#7969df;padding:4px 6px;border-radius:4px;vertical-align:middle;margin-left:4px}
+.botao-secundario{background:#fff;border:1px solid var(--borda);border-radius:6px;padding:7px 9px;color:#898c9d;font-size:9px}
+.filtros{display:flex;gap:5px;border-bottom:1px solid var(--borda);padding:17px 0 11px;margin-bottom:1px}
+.filtro{border:0;background:transparent;color:#999bab;border-radius:5px;padding:7px 9px;font-size:9px;font-weight:600}
+.filtro.ativo{background:#f0edff;color:#7767dd}.filtro span{margin-left:4px}
+.tarefa{display:flex;align-items:center;gap:10px;border-bottom:1px solid #f0f1f5;padding:13px 0}
+.tarefa:last-child{border-bottom:0}
+.checkbox{appearance:none;width:17px;height:17px;border:1.5px solid #d8dae5;border-radius:5px;position:relative;cursor:pointer;flex-shrink:0}
+.checkbox:checked{background:var(--roxo);border-color:var(--roxo)}
+.checkbox:checked:after{content:"✓";position:absolute;color:white;left:3px;top:0;font-size:11px}
+.tarefa-info{min-width:0;flex:1}.tarefa-nome{display:block;font-size:10px;font-weight:600;color:#55586c;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.tarefa.feita .tarefa-nome{text-decoration:line-through;color:#a8aaba}
+.tarefa-detalhe{display:flex;gap:6px;margin-top:5px}.etiqueta{background:#f0edff;color:#8273dc;border-radius:4px;padding:3px 5px;font-size:7px}.etiqueta.laranja{background:#fff0e7;color:#cc845b}.etiqueta.azul{background:#eaf5fd;color:#4d91bd}.etiqueta.verde{background:#e9f8f1;color:#43a27f}.prazo{color:#a2a5b3;font-size:8px}
+.prioridade{background:#fff5e2;color:#c18e36;padding:3px 5px;border-radius:4px;font-size:7px}.prioridade.baixa{background:#eaf8f1;color:#4b9c7e}
+.lista-vazia{text-align:center;color:#a0a3b1;font-size:10px;padding:30px}
+.rodape-tarefas{border-top:1px solid var(--borda);padding-top:12px;margin-top:2px;display:flex;justify-content:space-between;color:#9ca0af;font-size:9px}.rodape-tarefas button{border:0;background:none;color:#7666da;font-weight:600;font-size:9px}
+.coluna-direita{display:grid;gap:16px;align-content:start}
+.lista-equipe{margin-top:10px}
+.membro{display:flex;align-items:center;gap:9px;padding:11px 0;border-bottom:1px solid #f0f1f5}
+.membro:last-child{border-bottom:0}.membro div{flex:1}.membro strong,.membro small{display:block}.membro strong{font-size:10px}.membro small{font-size:8px;color:#9b9eae;margin-top:4px}.membro i{width:6px;height:6px;border-radius:50%;background:#2dbd8a}.membro i.ausente{background:#e8b044}
+.botao-convidar{width:100%;background:#faf9ff;border:1px dashed #d9d5f2;color:#7768dd;border-radius:6px;padding:9px;font-size:9px;font-weight:600;margin-top:9px}
+.destaque{background:#2c294d;color:white;min-height:205px;position:relative;overflow:hidden}.destaque:after{content:"";position:absolute;width:170px;height:170px;right:-80px;top:-75px;background:#7b6be333;border-radius:50%}
+.trofeu{font-size:21px;display:block;margin-bottom:12px}.destaque .pequeno{color:#aaa4df}.destaque h3{font:700 19px Poppins;line-height:1.25;margin:0 0 7px}.destaque>p:not(.pequeno){color:#c3c0d8;font-size:9px;line-height:1.6;max-width:250px}.pontuacao-final{border-top:1px solid #ffffff1b;margin-top:16px;padding-top:12px;display:flex;justify-content:space-between;position:relative;z-index:1}.pontuacao-final strong,.pontuacao-final small{display:block}.pontuacao-final strong{font:700 15px Poppins}.pontuacao-final small{font-size:8px;color:#aaa7c3;margin-top:2px}.pontuacao-final>span{width:28px;height:28px;border-radius:7px;background:#ffffff10;display:grid;place-items:center}
+footer{display:flex;justify-content:space-between;color:#a4a7b5;font-size:8px;padding:20px 0}
+.aviso{position:fixed;right:20px;bottom:20px;background:#292744;color:white;padding:11px 15px;border-radius:8px;font-size:10px;box-shadow:0 8px 25px #22213c30;opacity:0;transform:translateY(10px);transition:.2s;pointer-events:none;z-index:10}.aviso.mostrar{opacity:1;transform:none}
+
+/* TABLET */
+@media(max-width:1050px){
+ .barra-lateral{width:70px;padding:20px 9px;align-items:center}
+ .marca{margin:0 0 35px}.marca{font-size:0}.marca span{font-size:16px}
+ .titulo-menu{display:none}.menu-link{width:44px;padding:0;justify-content:center}.menu-link span{display:none}.menu-link b{display:none}
+ .caixa-ajuda,.usuario-menu div:not(.avatar){display:none}.usuario-menu{border:0;padding:0;margin-top:auto}
+ .conteudo{margin-left:70px;padding:0 22px}
+ .resumo{grid-template-columns:repeat(2,1fr)}
+ .grade{grid-template-columns:1fr}
+ .coluna-direita{grid-template-columns:1fr 1fr}
+}
+
+/* CELULAR */
+@media(max-width:600px){
+ body{font-size:12px}
+ .barra-lateral{display:none}.conteudo{margin-left:0;padding:0 12px}
+ .cabecalho{height:58px}.caminho{font-size:9px}.status-online{display:none}
+ .cabecalho-pagina{padding:23px 0 17px;display:block}.cabecalho-pagina h2{font-size:23px}.situacao{display:inline-block;margin-top:12px}
+ .resumo{grid-template-columns:1fr 1fr;gap:8px}.cartao-resumo{padding:12px}.cartao-resumo>strong{font-size:21px;margin:10px 0}.titulo-cartao{font-size:8px}.rodape-cartao{font-size:7px}
+ .grade{margin-top:12px}.cartao{padding:14px}.topo-cartao h3{font-size:14px}
+ .tarefa{gap:7px}.prioridade{display:none}.tarefa-nome{font-size:9px}.tarefa-detalhe{margin-top:4px}
+ .coluna-direita{grid-template-columns:1fr}
+ footer{flex-direction:column;gap:7px}
+ .login-card{padding:25px}.login-card h1{font-size:22px}
+}
+@media(max-width:360px){
+ .resumo{grid-template-columns:1fr}.cabecalho-pagina h2{font-size:21px}.filtros{overflow-x:auto}
+ .filtro{white-space:nowrap}
+}

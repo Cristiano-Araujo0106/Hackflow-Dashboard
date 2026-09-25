@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Painel de gerenciamento de equipe para hackathon">
+  <title>HackFlow - Painel do Time</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Tela de entrada -->
+  <section id="telaLogin" class="tela-login">
+    <div class="login-card">
+      <div class="logo">H</div>
+      <p class="pequeno roxo">HACKATHON 2026</p>
+      <h1>Bem-vindo ao HackFlow</h1>
+      <p class="texto-login">Entre para acompanhar as tarefas, o progresso e a pontuação do seu time.</p>
+
+      <form id="formLogin">
+        <label for="usuario">Usuário</label>
+        <input id="usuario" type="text" placeholder="Digite seu usuário" autocomplete="username" required>
+
+        <label for="senha">Senha</label>
+        <input id="senha" type="password" placeholder="Digite sua senha" autocomplete="current-password" required>
+
+        <button class="botao-principal" type="submit">Entrar</button>
+        <p id="mensagemLogin" class="mensagem-login"></p>
+      </form>
+
+      <div class="acesso-teste">
+        <strong>Acesso para teste</strong>
+        <span>Usuário: emilys</span>
+        <span>Senha: emilyspass</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Painel -->
+  <div id="painel" class="esconder">
+    <aside class="barra-lateral">
+      <a href="#" class="marca"><span>H</span> HackFlow</a>
+
+      <p class="titulo-menu">MENU</p>
+      <a href="#inicio" class="menu-link ativo">⌂ <span>Visão geral</span></a>
+      <a href="#tarefas" class="menu-link">✓ <span>Tarefas</span><b id="numeroMenu">0</b></a>
+      <a href="#equipe" class="menu-link">♧ <span>Equipe</span></a>
+
+      <div class="caixa-ajuda">
+        <strong>Hackathon em andamento</strong>
+        <p>Continue avançando. Cada tarefa concluída aproxima o time da entrega.</p>
+        <div class="barra-pequena"><span></span></div>
+      </div>
+
+      <div class="usuario-menu">
+        <div class="avatar avatar-roxo">EU</div>
+        <div>
+          <strong id="nomeUsuario">Usuário</strong>
+          <small>Administrador</small>
+        </div>
+      </div>
+    </aside>
+
+    <main class="conteudo">
+      <header class="cabecalho">
+        <div class="caminho">HackFlow / <strong>Visão geral</strong></div>
+        <div class="acoes">
+          <span class="status-online"><i></i> Sistema online</span>
+          <button id="botaoSair" class="botao-sair">Sair</button>
+        </div>
+      </header>
+
+      <section id="inicio" class="cabecalho-pagina">
+        <div>
+          <p class="pequeno roxo">HACKATHON 2026</p>
+          <h2>Painel do time</h2>
+          <p>Acompanhe o que já foi feito e o que ainda falta.</p>
+        </div>
+        <span class="situacao"><i></i> Em andamento</span>
+      </section>
+
+      <section class="resumo">
+        <article class="cartao-resumo">
+          <div class="titulo-cartao">Progresso do projeto <span>↗</span></div>
+          <strong id="progresso">0%</strong>
+          <div class="barra"><span id="barraProgresso"></span></div>
+          <div class="rodape-cartao"><span id="textoProgresso">0 de 0 tarefas</span><span>Meta: 100%</span></div>
+        </article>
+
+        <article class="cartao-resumo">
+          <div class="titulo-cartao">Pontuação do time <span>🏆</span></div>
+          <strong><span id="pontuacao">0</span> <small>pontos</small></strong>
+          <div class="barra amarela"><span id="barraPontos"></span></div>
+          <div class="rodape-cartao"><span>HackPoints</span><span>Máx. 1.000</span></div>
+        </article>
+
+        <article class="cartao-resumo">
+          <div class="titulo-cartao">Tarefas concluídas <span>✓</span></div>
+          <strong><span id="concluidas">0</span><small id="totalTarefas">/0</small></strong>
+          <div id="pontosTarefas" class="pontos-tarefas"></div>
+          <div class="rodape-cartao"><span>Entregas</span><span id="restantes">0 restantes</span></div>
+        </article>
+
+        <article class="cartao-resumo">
+          <div class="titulo-cartao">Integrantes ativos <span>♧</span></div>
+          <strong>04</strong>
+          <div class="mini-equipe">
+            <span class="avatar pequeno-avatar avatar-roxo">CA</span>
+            <span class="avatar pequeno-avatar avatar-laranja">ML</span>
+            <span class="avatar pequeno-avatar avatar-azul">JP</span>
+            <span class="avatar pequeno-avatar avatar-verde">AS</span>
+          </div>
+          <div class="rodape-cartao"><span>Time completo</span><span>4 funções</span></div>
+        </article>
+      </section>
+
+      <section class="grade">
+        <article id="tarefas" class="cartao">
+          <div class="topo-cartao">
+            <div>
+              <p class="pequeno">EXECUÇÃO</p>
+              <h3>Lista de tarefas <span id="numeroTarefas" class="numero">0</span></h3>
+              <p>Marque uma tarefa quando ela estiver pronta.</p>
+            </div>
+            <button id="botaoReiniciar" class="botao-secundario">↻ Reiniciar</button>
+          </div>
+
+          <div class="filtros">
+            <button class="filtro ativo" data-filtro="todas">Todas <span id="filtroTodas">0</span></button>
+            <button class="filtro" data-filtro="pendentes">Pendentes <span id="filtroPendentes">0</span></button>
+            <button class="filtro" data-filtro="concluidas">Concluídas <span id="filtroConcluidas">0</span></button>
+          </div>
+
+          <div id="listaTarefas" class="lista-tarefas"></div>
+
+          <div class="rodape-tarefas">
+            <span>✓ Dados carregados pela API</span>
+            <button id="verTodas">Ver todas</button>
+          </div>
+        </article>
+
+        <div class="coluna-direita">
+          <article id="equipe" class="cartao">
+            <div class="topo-cartao">
+              <div>
+                <p class="pequeno">COLABORAÇÃO</p>
+                <h3>Nosso time <span class="numero">04</span></h3>
+              </div>
+            </div>
+            <p class="subtitulo">Cada pessoa tem uma função importante.</p>
+
+            <div class="lista-equipe">
+              <div class="membro">
+                <span class="avatar avatar-roxo">CA</span>
+                <div><strong>Cristiano Araújo</strong><small>Desenvolvedor Front-end</small></div>
+                <i class="online"></i>
+              </div>
+              <div class="membro">
+                <span class="avatar avatar-laranja">ML</span>
+                <div><strong>Marina Lima</strong><small>Designer de Interfaces</small></div>
+                <i class="online"></i>
+              </div>
+              <div class="membro">
+                <span class="avatar avatar-azul">JP</span>
+                <div><strong>João Pedro</strong><small>Desenvolvedor Back-end</small></div>
+                <i class="online"></i>
+              </div>
+              <div class="membro">
+                <span class="avatar avatar-verde">AS</span>
+                <div><strong>Ana Souza</strong><small>Gerente de Produto</small></div>
+                <i class="ausente"></i>
+              </div>
+            </div>
+
+            <button id="botaoConvidar" class="botao-convidar">+ Convidar integrante</button>
+          </article>
+
+          <article class="cartao destaque">
+            <span class="trofeu">🏆</span>
+            <p class="pequeno">META DO TIME</p>
+            <h3>Vamos terminar<br>essa ideia!</h3>
+            <p>Conclua as tarefas e aumente a pontuação do time.</p>
+            <div class="pontuacao-final">
+              <div><strong id="pontuacaoFinal">0 pontos</strong><small>Pontuação atual</small></div>
+              <span>✦</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        <span>© 2026 HackFlow · Projeto de Hackathon</span>
+        <span><i></i> Funcionando normalmente</span>
+      </footer>
+    </main>
+  </div>
+
+  <div id="aviso" class="aviso"></div>
+  <script src="script.js"></script>
+</body>
+</html>
